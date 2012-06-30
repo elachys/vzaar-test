@@ -7,9 +7,11 @@ A fun little coding test i got sent by Vzaar. I enjoyed it very much
 * bundle - *gem install bundle*
 
 ## How to test
-Tests are built with rspec / capybara so run:
-<pre><code>rake spec</code></pre>
-Some tests are for js and so require firefox.
+Tests are built with rspec / capybara
+
+1. rake db:create RAILS_ENV=test
+2. rake db:migrate RAILS_ENV=test
+3. rake spec
 
 
 
