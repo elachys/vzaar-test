@@ -4,7 +4,7 @@
 $ = jQuery
 callback = (data) ->
     $('#status').show();
-    str = '<br /><b>' + data.d + '</b> <br />' + data.words.length + " anagrams found for '" + $('#search_input').val() + "' in " + data.time + 'ms';
+    str = '<br /><b>' + data.d + '</b> <br />' + data.words.length + " anagrams found for '" + $('#searchfield').val() + "' in " + data.time + 'ms';
     if(data.words.length > 0)
         str = str + '<br />> ';
         $(data.words).each  (i, word) ->
@@ -15,5 +15,5 @@ callback = (data) ->
 $(document).ready ->
     $('#status').hide();
     $('#search').submit ->
-        $.get '/words/', {word:$('#search_input').val()}, callback, 'json'
+        $.get '/words/', {word:$('#searchfield').val()}, callback, 'json'
         return false

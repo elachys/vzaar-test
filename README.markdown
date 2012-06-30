@@ -6,6 +6,11 @@ A fun little coding test i got sent by Vzaar. I enjoyed it very much
 * Mysql server - (easiest way is *brew install mysql*)
 * bundle - *gem install bundle*
 
+## How to test
+Tests are built with rspec / capybara so run:
+<pre><code>rake spec</code></pre>
+Some tests are for js and so require firefox.
+
 
 
 ## How to deploy
