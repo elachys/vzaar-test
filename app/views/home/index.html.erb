@@ -1,0 +1,29 @@
+<h1>Anagram Finder</h1>
+<%= form_tag('/',{:multipart => true, :class => 'form well'}) do %>
+    <% if(@fileload) %>
+        <div class="alert alert-success"><%= "Dictionary loaded in #{@fileload}ms"  %></div>
+    <%end%>
+    <fieldset>
+    <div class="control-group">
+        <label for="dictionary" class="control-label">Upload a new dictionary</label>
+        <div class="controls">
+            <div class="input">
+                <%= file_field_tag 'dictionary', :class => 'input-file span3' %>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </div>
+        </div>
+    </div>
+        
+    </fieldset>
+<% end %>
+
+<%= form_tag(nil,{:id => 'search', :class => 'well form-search'}) do %>
+    <label for="searchfield">Enter a word to search for anagrams</label>
+    <div class="controls">
+        <%= text_field_tag 'search_input',nil, :class => 'input-medium search-query' %>
+        <button type="submit" class="btn">Search</button>
+    </div>
+<% end %>
+
+<div class="well" id="status">
+</div>
